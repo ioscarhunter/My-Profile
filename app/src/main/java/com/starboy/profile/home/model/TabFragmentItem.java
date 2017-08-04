@@ -1,4 +1,4 @@
-package com.starboy.profile.model;
+package com.starboy.profile.home.model;
 
 import android.support.v4.app.Fragment;
 
@@ -6,11 +6,11 @@ import android.support.v4.app.Fragment;
  * Created by Starboy on 4/12/2017.
  */
 
-public class TabItem {
+public class TabFragmentItem {
     private Fragment fragment;
     private String title;
 
-    public TabItem(Fragment fragment, String title) {
+    public TabFragmentItem(Fragment fragment, String title) {
         this.fragment = fragment;
         this.title = title;
     }

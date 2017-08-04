@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">My Profile</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="fragment_detail">Detail</string>
+    <string name="fragment_education">Education</string>
+    <string name="fragment_exprience">Experience</string>
+    <string name="name">Karunyapas Dangruan</string>
+    <string name="id_facebook">1212692799</string>
 
 </resources>

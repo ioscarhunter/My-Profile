@@ -1,4 +1,4 @@
-package com.starboy.profile.fragment;
+package com.starboy.profile.home.view.fragment;
 
 
 import android.os.Bundle;
@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 
 import com.starboy.profile.R;
 
-public class InfoFragment extends Fragment {
+public class DetailFragment extends Fragment {
 
-    public InfoFragment() {
+    public DetailFragment() {
         // Required empty public constructor
     }
 
-    public static InfoFragment newInstance() {
-        return new InfoFragment();
+    public static DetailFragment newInstance() {
+        return new DetailFragment();
     }
 
     @Override
@@ -28,7 +28,7 @@ public class InfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
 }

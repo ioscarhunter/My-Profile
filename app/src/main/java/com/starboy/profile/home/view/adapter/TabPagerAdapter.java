@@ -1,11 +1,11 @@
-package com.starboy.profile.adapter;
+package com.starboy.profile.home.view.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.starboy.profile.model.TabItem;
+import com.starboy.profile.home.model.TabFragmentItem;
 
 import java.util.ArrayList;
 
@@ -16,34 +16,34 @@ import java.util.ArrayList;
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
 
-    private ArrayList<TabItem> tabItems;
+    private ArrayList<TabFragmentItem> tabItemIcons;
     private int mCurrentPosition = -1;
     private Context context;
 
     public TabPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
-        tabItems = new ArrayList<>();
+        tabItemIcons = new ArrayList<>();
     }
 
-    public void setTabItems(ArrayList<TabItem> tabItems) {
-        this.tabItems = tabItems;
+    public void setTabItemIcons(ArrayList<TabFragmentItem> tabItemIcons) {
+        this.tabItemIcons = tabItemIcons;
         notifyDataSetChanged();
     }
 
     @Override
     public Fragment getItem(int position) {
-        return tabItems.get(position).getFragment();
+        return tabItemIcons.get(position).getFragment();
     }
 
     @Override
     public int getCount() {
-        return tabItems.size();
+        return tabItemIcons.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabItems.get(position).getTitle();
+        return tabItemIcons.get(position).getTitle();
     }
 
 }

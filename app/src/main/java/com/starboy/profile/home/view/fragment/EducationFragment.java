@@ -1,4 +1,4 @@
-package com.starboy.profile.fragment;
+package com.starboy.profile.home.view.fragment;
 
 
 import android.os.Bundle;

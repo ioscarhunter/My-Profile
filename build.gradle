@@ -23,11 +23,6 @@ ext {
     buildToolsVersion = '25.0.2'
     compileSdkVersion = 25
     targetSdkVersion = 25
-
-    glideVersion = '3.7.0'
-
-    diskLruVersion = '2.0.2'
-
 }
 
 task clean(type: Delete) {
