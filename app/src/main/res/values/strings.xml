@@ -4,7 +4,12 @@
     <string name="fragment_detail">Detail</string>
     <string name="fragment_education">Education</string>
     <string name="fragment_exprience">Experience</string>
+    <string name="fragment_skill">Skill</string>
+
     <string name="name">Karunyapas Dangruan</string>
     <string name="id_facebook">1212692799</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

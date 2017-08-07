@@ -19,6 +19,7 @@ import com.starboy.profile.home.view.adapter.TabPagerAdapter;
 import com.starboy.profile.home.view.fragment.DetailFragment;
 import com.starboy.profile.home.view.fragment.EducationFragment;
 import com.starboy.profile.home.view.fragment.ExperienceFragment;
+import com.starboy.profile.home.view.fragment.SkillFragment;
 import com.starboy.profile.service.FacebookService;
 
 import java.util.ArrayList;
@@ -115,6 +116,7 @@ public class HomeActivity extends AppCompatActivity implements HomePresenter.Hom
     private void initTab() {
         tabFragmentItems = new ArrayList<>();
         tabFragmentItems.add(new TabFragmentItem(DetailFragment.newInstance(), getString(R.string.fragment_detail)));
+        tabFragmentItems.add(new TabFragmentItem(SkillFragment.newInstance(), getString(R.string.fragment_skill)));
         tabFragmentItems.add(new TabFragmentItem(EducationFragment.newInstance(), getString(R.string.fragment_education)));
         tabFragmentItems.add(new TabFragmentItem(ExperienceFragment.newInstance(), getString(R.string.fragment_exprience)));
 
