@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity implements HomePresenter.Hom
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle(getString(R.string.name));
         bindViews();
         initTab();
         homePresenter = new HomePresenter(getApplicationContext(), HomeActivity.this);

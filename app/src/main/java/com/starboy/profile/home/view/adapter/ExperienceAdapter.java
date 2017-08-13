@@ -29,9 +29,14 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceAdapter.Ex
         items = new ArrayList<>();
     }
 
+    public void setItems(ArrayList<ExperienceItem> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
     @Override
     public ExperienceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_experience, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_exprerience, parent, false);
         return new ExperienceViewHolder(v);
     }
 
@@ -39,14 +44,14 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceAdapter.Ex
     public void onBindViewHolder(ExperienceViewHolder holder, int position) {
         ExperienceItem item = items.get(position);
         if (position == 0) {
-            holder.timelineTopView.setVisibility(View.GONE);
+            holder.timelineTopView.setVisibility(View.VISIBLE);
             holder.timelineBottomView.setVisibility(View.VISIBLE);
         } else if (position < getItemCount() - 1) {
             holder.timelineTopView.setVisibility(View.VISIBLE);
             holder.timelineBottomView.setVisibility(View.VISIBLE);
         } else {
             holder.timelineTopView.setVisibility(View.VISIBLE);
-            holder.timelineBottomView.setVisibility(View.GONE);
+            holder.timelineBottomView.setVisibility(View.INVISIBLE);
         }
 
         holder.nameText.setText(item.getName());

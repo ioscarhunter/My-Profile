@@ -5,4 +5,8 @@
     <color name="colorAccent">#00e5ff</color>
     <color name="colorTimeline">#ec8492</color>
 
+    <color name="colorBlackText">#212121</color>
+    <color name="colorGrey61Text">#616161</color>
+
+
 </resources>
