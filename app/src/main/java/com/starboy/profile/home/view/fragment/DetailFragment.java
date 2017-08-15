@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.starboy.profile.R;
 import com.starboy.profile.home.model.PersonResponse;
@@ -16,6 +18,16 @@ import com.starboy.profile.home.presenter.PersonalPresenter;
 public class DetailFragment extends Fragment implements PersonalPresenter.PersonalPresenterListener {
 
     private PersonalPresenter presenter;
+    private LinearLayout addressLayout;
+    private TextView addressText;
+    private LinearLayout phoneLayout;
+    private TextView phoneText;
+    private LinearLayout bdayLayout;
+    private TextView bdayText;
+    private LinearLayout mailLayout;
+    private TextView mailText;
+    private LinearLayout profileLayout;
+    private TextView profileText;
 
     public DetailFragment() {
         // Required empty public constructor
@@ -46,11 +58,28 @@ public class DetailFragment extends Fragment implements PersonalPresenter.Person
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        addressLayout = (LinearLayout) view.findViewById(R.id.addressLayout);
+        addressText = (TextView) view.findViewById(R.id.addressText);
+        phoneLayout = (LinearLayout) view.findViewById(R.id.phoneLayout);
+        phoneText = (TextView) view.findViewById(R.id.phoneText);
+        bdayLayout = (LinearLayout) view.findViewById(R.id.bdayLayout);
+        bdayText = (TextView) view.findViewById(R.id.bdayText);
+        mailLayout = (LinearLayout) view.findViewById(R.id.mailLayout);
+        mailText = (TextView) view.findViewById(R.id.mailText);
+        profileLayout = (LinearLayout) view.findViewById(R.id.profileLayout);
+        profileText = (TextView) view.findViewById(R.id.profileText);
+
         presenter.getData();
     }
 
     @Override
     public void setData(PersonResponse items) {
+        addressText.setText(items.getAddress());
+        phoneText.setText(items.getTelephone());
+        mailText.setText(items.getEmail());
+        profileText.setText(items.getUrl());
+        bdayText.setText(items.getBirthday());
+
 
     }
 }

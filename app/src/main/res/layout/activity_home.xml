@@ -22,7 +22,7 @@
             android:fitsSystemWindows="true"
             android:title="@string/name"
             app:expandedTitleGravity="center|bottom"
-            app:expandedTitleMarginBottom="@dimen/tab_height"
+            app:expandedTitleMarginBottom="60dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@android:color/transparent">
 
@@ -39,9 +39,10 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="40dp"
                 android:layout_marginBottom="@dimen/tab_height"
                 android:background="@android:color/transparent"
+                android:gravity="center"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -70,7 +71,6 @@
                 app:layout_scrollFlags="scroll|enterAlways|snap" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
-
 
     </android.support.design.widget.AppBarLayout>
 
