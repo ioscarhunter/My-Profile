@@ -1,6 +1,7 @@
 package com.starboy.profile.home.view.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,25 +11,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.starboy.profile.R;
 import com.starboy.profile.home.model.ExperienceItem;
+import com.starboy.profile.home.presenter.EXPPresenter;
 import com.starboy.profile.home.view.adapter.ExperienceAdapter;
-import com.starboy.profile.utils.Utils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class EducationFragment extends Fragment {
+public class EducationFragment extends Fragment implements EXPPresenter.EXPPresenterListener {
 
     private RecyclerView recyclerView;
+    private EXPPresenter presenter;
+    private ExperienceAdapter adapter;
 
     public EducationFragment() {
         // Required empty public constructor
     }
-
 
     public static EducationFragment newInstance() {
         return new EducationFragment();
@@ -47,6 +46,13 @@ public class EducationFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        presenter = new EXPPresenter(context, this);
+
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -55,22 +61,19 @@ public class EducationFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        ExperienceAdapter adapter = new ExperienceAdapter(getActivity());
+        adapter = new ExperienceAdapter(getActivity());
         recyclerView.setAdapter(adapter);
 
-        try {
-            String exp = Utils.loadJSONFromAsset(getActivity(), "education.json");
-
-            ArrayList<ExperienceItem> items = new Gson().fromJson(exp, new TypeToken<ArrayList<ExperienceItem>>() {
-            }.getType());
-            adapter.setItems(items);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        String filename = "education.json";
+        presenter.getData(filename);
 
 //        adapter.setItems()
 
 
     }
+
+    public void setData(ArrayList<ExperienceItem> items) {
+        adapter.setItems(items);
+    }
+
 }
